@@ -4,11 +4,13 @@
   "description": "Lodash chain steps visualization tool",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "mocha",
     "lint": "standard",
     "postversion": "git push && git push --tags && LIVE_DIR=../dexters-lab-live/ npm run deploy",
     "predeploy": "echo \"Deploy repo directory: $LIVE_DIR\"",
-    "deploy": "NODE_ENV=production gulp build && cp -R docs/* $LIVE_DIR && cd $LIVE_DIR && git add -A && git commit -m \"Release ${npm_package_version}\" && git push origin master"
+    "deploy": "NODE_ENV=production gulp build && cp -R docs/* $LIVE_DIR && cd $LIVE_DIR && git add -A && git commit -m \"Release ${npm_package_version}\" && git push origin master",
+    "build": "NODE_ENV=production gulp build"
   },
   "keywords": [
     "lodash"
@@ -21,6 +23,7 @@
   "dependencies": {
     "brace": "^0.9.1",
     "copy-to-clipboard": "^3.0.5",
+    "express": "^4.17.1",
     "json-beautify": "^1.0.1",
     "lodash": "4.17.2",
     "react": "^15.4.1",

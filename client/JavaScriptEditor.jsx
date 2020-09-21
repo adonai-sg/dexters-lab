@@ -16,7 +16,7 @@ export default class JavaScriptEditor extends Component {
 
   static defaultProps = {
     readOnly: false,
-    height: '200px'
+    height: '600px'
   }
 
   componentDidMount () {
